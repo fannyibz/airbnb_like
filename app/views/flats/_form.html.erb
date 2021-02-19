@@ -1,0 +1,11 @@
+
+<div>
+    <%= simple_form_for flat do |f| %>
+      <%= f.input :name, label: "Flat name:" %>
+      <%= f.input :description, label: "Description of the place:" %>
+      <%= f.input :address, label: "Address:" %>
+      <%= f.input :price_per_night, label: "Price per nigth:" %>
+      <%= f.submit "Locate my flat", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
