@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :user_contacts, dependent: :destroy
+  has_many :flats
 
 end
