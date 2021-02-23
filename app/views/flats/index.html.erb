@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-8 offset-2">
+    <div class="cards-container">
+      <% @flats.each do |flat| %>
+        <div class="card-flat">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.location_list %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
