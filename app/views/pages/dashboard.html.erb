@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div class="col-8 offset-2">
+    <h1>My flats</h1>
+      <div class="cards-container">
+        <% @flat_to_rent.each do |flat_to_rent| %>
+
+          <div class="card-flat">
+            <div class="flat-box">
+              <h2><%= flat_to_rent.name %></h2>
+              <p><%= flat_to_rent.description %></p>
+              <div class="flat-infos">
+                <p><%= flat_to_rent.address %></p>
+                <p><%= flat_to_rent.price_per_night %> €</p>
+              </div>
+              <div class="flat-tags">
+                <ul>
+                  <% flat_to_rent.tag_list.each do |tag| %>
+                    <li><%= tag %> </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <%= link_to "Modify",  edit_flat_path(flat_to_rent), class: "btn btn-primary"  %>
+        </div>
+
+      <% end %>
+
+      </div>
+    <%#= render "form", flat: @flat %>
+  </div>
+</div>

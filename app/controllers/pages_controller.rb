@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    # @user_infos = current_user.user_contact
+    @flat_to_rent = current_user.flats
+  end
 end

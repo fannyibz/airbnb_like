@@ -10,11 +10,13 @@
       </div>
       <div class="flat-tags">
         <ul>
-          <% @flat.location_list.each do |location| %>
-            <li><%= location %> </li>
+          <% @flat.tag_list.each do |tag| %>
+            <li><%= tag %> </li>
           <% end %>
         </ul>
       </div>
     </div>
+
+    <%#= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-primary"  %>
   </div>
 </div>
