@@ -8,3 +8,7 @@
 User.create(email: "fanny@mail.com", password: '1234')
 User.create(email: "gaby@mail.com", password: '1234')
 p "#{User.count} user(s) created"
+
+UserContact.create(first_name: "fanny", last_name: "ibanez", user_id: 1)
+UserContact.create(first_name: "gabriel", last_name: "ibanez", user_id: 2)
+p "#{UserContact.count} user(s) created"
