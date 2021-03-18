@@ -42,6 +42,11 @@ class FlatsController < ApplicationController
     redirect_to flat_path(@flat)
   end
 
+  def destroy
+    @flat.destroy
+    redirect_to flats_path
+  end
+
   private
 
   def find_flat

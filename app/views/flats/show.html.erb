@@ -17,6 +17,12 @@
       </div>
     </div>
 
-    <%#= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-primary"  %>
+    <%= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-primary"  %>
+    <%#= link_to "Delete",  flat_path(@flat), class: "btn btn-alert"  %>
+    <%= link_to "Delete #{@flat.name}",
+                            flat_path(@flat),
+                            class: "service-submit-btn",
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
   </div>
 </div>
