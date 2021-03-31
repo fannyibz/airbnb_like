@@ -13,4 +13,8 @@ class FlatPolicy < ApplicationPolicy
     record.user = user
   end
 
+  def create?
+    update?
+  end
+
 end

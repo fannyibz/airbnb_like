@@ -9,6 +9,17 @@ class Api::V1::FlatsController < Api::V1::BaseController
   def show
   end
 
+  def create
+    @flat = Flat.new(flat_params)
+    @flat.user = current_user
+    authorize @flat
+    if @flat.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
   def update
     if @flat.update(flat_params)
       render :show
