@@ -17,4 +17,7 @@ class FlatPolicy < ApplicationPolicy
     update?
   end
 
+  def destroy?
+    update?
+  end
 end

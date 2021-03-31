@@ -1,6 +1,6 @@
 class Api::V1::FlatsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [:index, :show]
-  before_action :set_flat, only: [:show, :update]
+  before_action :set_flat, only: [:show, :update, :destroy]
 
   def index
     @flats = policy_scope(Flat)
@@ -26,6 +26,12 @@ class Api::V1::FlatsController < Api::V1::BaseController
     else
       render_error
     end
+  end
+
+  def destroy
+    @flat.destroy
+    head :no_content
+    # No need to create a `destroy.json.jbuilder` view
   end
 
   private
