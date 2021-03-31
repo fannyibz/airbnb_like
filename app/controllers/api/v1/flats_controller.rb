@@ -42,7 +42,7 @@ class Api::V1::FlatsController < Api::V1::BaseController
   end
 
   def flat_params
-    params.require(:flat).permit(:name, :address)
+    params.require(:flat).permit(:name, :address, :description)
   end
 
   def render_error
