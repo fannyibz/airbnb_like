@@ -21,11 +21,13 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
+    authorize @flat
     if @flat.save
       current_user.tag(@flat, with: flat_params[:location_list], on: :tags)
       redirect_to flat_path(@flat)
@@ -51,6 +53,7 @@ class FlatsController < ApplicationController
 
   def find_flat
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def flat_params
