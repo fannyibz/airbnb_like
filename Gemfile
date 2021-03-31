@@ -37,6 +37,9 @@ gem 'devise'
 # Authorization
 gem 'pundit'
 
+# To manage an authentication_token
+gem 'simple_token_authentication'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
