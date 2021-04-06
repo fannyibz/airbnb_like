@@ -1,10 +1,11 @@
 class FlatsController < ApplicationController
+  # acts_as_token_authentication_handler_for User, except: [:index, :show]
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 
   def index
-    @flats = Flat.all
+    @flats = policy_scope(Flat)
 
     # @flats = Flat.tagged_with("soleil", :on => :tags)
     # @flats = Flat.tagged_with(params[:tag])
