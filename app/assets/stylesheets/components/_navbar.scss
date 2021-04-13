@@ -1,3 +1,9 @@
+
+.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+    background: #94ebcd;
+    color: #ffefa1;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -20,3 +26,6 @@
 }
 
 
+.navbar-light .navbar-nav .nav-link {
+    color: #ffefa1;
+}
