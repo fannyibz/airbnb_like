@@ -11,13 +11,17 @@
   .fas {
     font-size: 30px;
     align-items: center;
+     &:hover {
+      font-size: 32px;
+    }
   }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   li.nav-item.dropdown {
-    padding: 4px;
+    padding: 4px 15px;
+
   }
 }
 
@@ -27,5 +31,9 @@
 
 
 .navbar-light .navbar-nav .nav-link {
-    color: #ffefa1;
+    color: #ffefa1!important;
+    padding: 7px 15px;
+     &:hover {
+      color: #195a53!important;
+    }
 }
