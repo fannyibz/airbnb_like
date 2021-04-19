@@ -7,7 +7,28 @@
 }
 
 .card-flat {
-  border: 1px solid black;
-  border-radius: 3px;
+  padding: 3px;
+  border-radius: 2px;
   margin: 15px;
+  width: 250px;
+  height: 200px;
+  // background: #ffefa2;
+  box-shadow: 1px 1px 1px #c6d0cc87;
+}
+
+
+.card-flat {
+    width: 250px;
+    height: 200px;
+}
+
+
+.cards-row {
+  justify-content: space-around;
+}
+
+.title-card {
+  a {
+    color: #009688;
+  }
 }
