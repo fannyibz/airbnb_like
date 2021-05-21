@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    raise
-    # @user_infos = current_user.user_contact
-    @flat_to_rent = current_user.flats
+    @user_infos = current_user.user_contact
+    @flats_to_rent = current_user.flats
+    @bookings = current_user.bookings
   end
 end

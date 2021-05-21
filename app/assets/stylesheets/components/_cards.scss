@@ -1,9 +1,11 @@
-.cards-container {
-  display: flex
-}
-
-.card-tag {
-
+.cards-box {
+  display: grid;
+  grid: repeat(2, 230px)/auto-flow 275px;
+  .card-flat {
+    background-color: #8ca0ff;
+    width: 240px;
+    height: 200px;
+  }
 }
 
 .card-flat {
