@@ -8,5 +8,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :user_contact, dependent: :destroy
-  has_many :flats
+  has_many :flats, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 end
