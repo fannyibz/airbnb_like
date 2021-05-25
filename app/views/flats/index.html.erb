@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="cards-box">
-        <div class="row cards-row">
-          <% @flats.each do |flat| %>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 m-1">
-              <div class="card-flat">
-                <h3 class="title-card"><%= link_to flat.name, flat_path(flat) %></h3>
-                <p><%= flat.tag_list %></p>
-              </div>
-            </div>
-          <% end %>
+  <h1>Flats</h1>
+    <div class="cards-box">
+      <% @flats.each do |flat| %>
+        <div class="card-flat">
+          <h3 class="title-card"><%= link_to flat.name, flat_path(flat) %></h3>
+          <div class="flat-tags">
+            <ul>
+              <% flat.tag_list.each do |tag| %>
+                <li><%= tag %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  </div>
+
 </div>
