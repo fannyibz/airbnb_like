@@ -5,6 +5,11 @@ h1 {
   margin-bottom: 30px;
   color: $violet;
 }
+
+h2 {
+  color: $green;
+}
+
 h3 {
   font-size: 22px;
 }
@@ -12,8 +17,18 @@ h3 {
 p {
   font-size: 16px;
   margin: 0px;
+  color: white;
 }
 
 ul {
   list-style: none;
+}
+
+.bar-top {
+  position: relative;
+  height: 65px;
+}
+
+a {
+  text-decoration: none!important;
 }

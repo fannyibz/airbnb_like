@@ -1,8 +1,38 @@
+.btn {
+  text-decoration: none;
+}
 .btn-cards {
   border-radius: 5px;
   background: #94e9cd;
   color: white;
-  position: absolute;
   right: 15px;
   bottom: 15px;
+  box-shadow: 1px 1px 2px #5d6488;
+  &:hover {
+    color: #5d6488;
+  }
+}
+
+.btn-delete {
+  color: white;
+  background: $violet;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #5d6488;
+  &:hover {
+    color: #5d6488;
+  }
+}
+
+.btn-back {
+  border: 1px solid $violet;
+  color: $violet;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: absolute;
+  right: 0px;
+  box-shadow: 1px 1px 2px #8ca0ff;
+  &:hover {
+    color: $violet;
+    border: 2px solid $violet;
+  }
 }
