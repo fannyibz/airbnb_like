@@ -1,7 +1,7 @@
 
 .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-    background: #94ebcd;
-    color: #ffefa1;
+    background: $green;
+    color: $violet;
 }
 
 .navbar-lewagon {
@@ -31,7 +31,7 @@
 
 
 .navbar-light .navbar-nav .nav-link {
-    color: #ffefa1!important;
+    color: $violet!important;
     padding: 7px 15px;
      &:hover {
       color: #195a53!important;
