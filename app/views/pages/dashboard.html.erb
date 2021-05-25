@@ -7,8 +7,7 @@
         <div class="cards-box">
           <% @flats_to_rent.each do |flat_to_rent| %>
             <div class="card-flat">
-              <div class="flat-box">
-                <h2><%= link_to flat_to_rent.name, flat_path(flat_to_rent) %></h2>
+                <h3><%= link_to flat_to_rent.name, flat_path(flat_to_rent) %></h3>
                 <div class="flat-infos">
                   <p><%= flat_to_rent.address %></p>
                   <p><%= flat_to_rent.price_per_night %> €</p>
@@ -20,8 +19,7 @@
                     <% end %>
                   </ul>
                 </div>
-              </div>
-              <%= link_to "Modify",  edit_flat_path(flat_to_rent), class: "btn btn-primary"  %>
+              <%= link_to "Modify",  edit_flat_path(flat_to_rent), class: "btn btn-cards"  %>
             </div>
           <% end %>
         </div>
@@ -33,7 +31,7 @@
           <% @bookings.each do |booking| %>
             <% flat_booked = booking.flat %>
             <div class="card-flat">
-              <h2><%= link_to flat_booked.name, flat_path(flat_booked) %></h2>
+              <h3><%= link_to flat_booked.name, flat_path(flat_booked) %></h3>
               <div class="flat-infos">
                 <p><%= flat_booked.address %></p>
                 <p><%= flat_booked.price_per_night %> €</p>
