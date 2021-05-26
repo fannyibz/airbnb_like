@@ -11,8 +11,10 @@
   .fas {
     font-size: 30px;
     align-items: center;
+    transition: color 250ms;
+    transition-timing-function: ease;
      &:hover {
-      font-size: 32px;
+      color: $blue_gray;
     }
   }
 }
@@ -21,7 +23,6 @@
   flex-grow: 0;
   li.nav-item.dropdown {
     padding: 4px 15px;
-
   }
 }
 
@@ -33,7 +34,13 @@
 .navbar-light .navbar-nav .nav-link {
     color: $violet!important;
     padding: 7px 15px;
+    transition: color 250ms;
+    transition-timing-function: ease;
      &:hover {
-      color: #195a53!important;
+      color: $blue_gray!important;
     }
+}
+
+a.dropdown-item {
+  color: $violet;
 }

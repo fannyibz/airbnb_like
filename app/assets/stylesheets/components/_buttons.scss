@@ -1,8 +1,59 @@
+.btn {
+  text-decoration: none;
+}
 .btn-cards {
   border-radius: 5px;
   background: #94e9cd;
   color: white;
-  position: absolute;
   right: 15px;
   bottom: 15px;
+  box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
+  &:hover {
+    color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
+  }
+}
+
+.btn-delete {
+  color: white;
+  background: $violet;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
+  &:hover {
+    color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
+  }
+}
+
+.btn-back {
+  border: 1px solid $violet;
+  color: $violet;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: absolute;
+  right: 0px;
+  box-shadow: 1px 1px 2px #8ca0ff;
+  transition: border 200ms;
+  transition-timing-function: ease;
+  &:hover {
+    color: $violet;
+    border: 2px solid $violet;
+  }
+}
+
+.btn-confirm {
+  width: 100%;
+  background-color: $green;
+  color: white;
+  box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
+  &:hover {
+    color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
+  }
 }
