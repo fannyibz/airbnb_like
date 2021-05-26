@@ -44,3 +44,16 @@
     border: 2px solid $violet;
   }
 }
+
+.btn-confirm {
+  width: 100%;
+  background-color: $green;
+  color: white;
+  box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
+  &:hover {
+    color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
+  }
+}

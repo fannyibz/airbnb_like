@@ -1,12 +1,12 @@
 
-<div>
+<div class="flat-form">
     <%= simple_form_for flat do |f| %>
       <%= f.input :name, label: "Flat name:" %>
       <%= f.input :description, label: "Description of the place:" %>
       <%= f.input :address, label: "Address:" %>
       <%= f.input :price_per_night, label: "Price per nigth:" %>
       <%= f.input :tag_list, label: "Category:", hint: "Add your tags, separated by commas" %>
-      <%= f.submit "Save my flat", class: "btn btn-primary" %>
+      <%= f.submit "Save my flat", class: "btn btn-confirm" %>
     <% end %>
 </div>
 
