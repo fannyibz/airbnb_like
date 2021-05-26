@@ -8,8 +8,11 @@
   right: 15px;
   bottom: 15px;
   box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
   &:hover {
     color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
   }
 }
 
@@ -18,8 +21,11 @@
   background: $violet;
   border-radius: 5px;
   box-shadow: 1px 1px 2px #5d6488;
+  transition: color 150ms, box-shadow 150ms;
+  transition-timing-function: ease;
   &:hover {
     color: #5d6488;
+    box-shadow: 2px 2px 3px #5d6488;
   }
 }
 
@@ -31,6 +37,8 @@
   position: absolute;
   right: 0px;
   box-shadow: 1px 1px 2px #8ca0ff;
+  transition: border 200ms;
+  transition-timing-function: ease;
   &:hover {
     color: $violet;
     border: 2px solid $violet;

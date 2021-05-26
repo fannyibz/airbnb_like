@@ -13,12 +13,15 @@
   box-shadow: 1px 1px 1px #c6d0cc87;
   height: 240px;
   width: 275px;
+  transition: box-shadow 300ms;
+  transition-timing-function: ease;
+  &:hover {
+    box-shadow: 2px 2px 3px $blue_gray;
+  }
   padding: 10px 15px;
   position: relative;
   h3 {
-    a {
-      color: $green!important;
-    }
+    color: $green!important;
   }
   p {
     color: white;
