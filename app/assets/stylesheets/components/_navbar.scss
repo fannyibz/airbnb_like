@@ -23,7 +23,6 @@
   flex-grow: 0;
   li.nav-item.dropdown {
     padding: 4px 15px;
-
   }
 }
 
@@ -40,4 +39,8 @@
      &:hover {
       color: $blue_gray!important;
     }
+}
+
+a.dropdown-item {
+  color: $violet;
 }
