@@ -26,7 +26,7 @@ flat_1 = Flat.create(name: "Lovely flat in Barcelone",
                      price_per_night: rand(40..500),
                      user_id: 1)                   
 flat_1.tag_list.add("romance", "city lover")
-file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105746/greta-farnedi-Z6NBAuKSpYQ-unsplash_tirgvw.jpg')
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105745/francesca-tosolini-yYUu4R4Wuwk-unsplash_crxrlj.jpg')
 flat_1.photo.attach(io: file, filename: 'flat_barcelona.jpg', content_type: 'image/jpg')
 flat_1.save
 
