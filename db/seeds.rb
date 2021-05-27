@@ -26,6 +26,8 @@ flat_1 = Flat.create(name: "Lovely flat in Barcelone",
                      price_per_night: rand(40..500),
                      user_id: 1)                   
 flat_1.tag_list.add("romance", "city lover")
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105745/francesca-tosolini-yYUu4R4Wuwk-unsplash_crxrlj.jpg')
+flat_1.photo.attach(io: file, filename: 'flat_barcelona.jpg', content_type: 'image/jpg')
 flat_1.save
 
 flat_2 = Flat.create(name: "Big house in the country",
@@ -34,6 +36,8 @@ flat_2 = Flat.create(name: "Big house in the country",
                      price_per_night: rand(40..500),
                      user_id: 1)
 flat_2.tag_list.add("nature", "sharing")
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105746/greta-farnedi-Z6NBAuKSpYQ-unsplash_tirgvw.jpg')
+flat_2.photo.attach(io: file, filename: 'house_country.jpg', content_type: 'image/jpg')
 flat_2.save
 
 flat_3 = Flat.create(name: "Flat in Paris with view",
@@ -42,6 +46,8 @@ flat_3 = Flat.create(name: "Flat in Paris with view",
                      price_per_night: rand(40..500),
                      user_id: 1)
 flat_3.tag_list.add("city lover", "view", "romance")
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105708/adam-winger-_kifxaMv2QY-unsplash_rlkr3l.jpg')
+flat_3.photo.attach(io: file, filename: 'flat_paris.jpg', content_type: 'image/jpg')
 flat_3.save
 
 flat_4 = Flat.create(name: "House over the méditéranée",
@@ -50,6 +56,8 @@ flat_4 = Flat.create(name: "House over the méditéranée",
                      price_per_night: rand(40..500),
                      user_id: 2)
 flat_4.tag_list.add("sun", "sea", "view")
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105733/john-fornander-tVzyDSV84w8-unsplash_jpvfzh.jpg')
+flat_4.photo.attach(io: file, filename: 'house_sea.jpg', content_type: 'image/jpg')
 flat_4.save
 
 flat_5 = Flat.create(name: "Cabane dans un arbre",
@@ -58,6 +66,8 @@ flat_5 = Flat.create(name: "Cabane dans un arbre",
                      price_per_night: rand(40..500),
                      user_id: 1)
 flat_5.tag_list.add("nature", "cheminée", "coconning")
+file = URI.open('https://res.cloudinary.com/dcwc5yx5t/image/upload/v1622105730/josh-hild-0_N6VO_DAN4-unsplash_peat5t.jpg')
+flat_5.photo.attach(io: file, filename: 'house_tree.jpg', content_type: 'image/jpg')
 flat_5.save
 
 puts "#{Flat.count} flats created!"
