@@ -8,18 +8,16 @@
   margin-bottom: 60px;
 }
 .card-flat {
-  background-color: #8ca0ff;
   border-radius: 2px;
   box-shadow: 1px 1px 1px #c6d0cc87;
   height: 240px;
   width: 275px;
   transition: box-shadow 300ms;
   transition-timing-function: ease;
+  position: relative;
   &:hover {
     box-shadow: 2px 2px 3px $blue_gray;
   }
-  padding: 10px 15px;
-  position: relative;
   h3 {
     color: $green!important;
   }
@@ -29,6 +27,11 @@
   .btn-cards {
     position: absolute;
   }
+}
+
+.card-infos {
+  background-color: #8ca0ff;
+  padding: 10px 15px;
 }
 
 .flat-tags {
@@ -45,4 +48,8 @@
       border-radius: 5px;
     }
   }
+}
+
+.card-photo {
+  width: 100%;
 }
