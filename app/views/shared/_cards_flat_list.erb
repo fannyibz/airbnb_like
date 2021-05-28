@@ -1,19 +1,21 @@
 <div class="cards-box">
   <% @flats.each do |flat| %>
-    <%= link_to flat_path(flat) do %>
-      <div class="card-flat">
-        <%= cl_image_tag flat.photo.key, class:"card-photo"%>
+    <div class="card-flat">
+      <%= link_to flat_path(flat) do %>
+        <%= cl_image_tag flat.photo.key, :crop=>"fit", class:"card-photo"%>
         <div class="card-infos">
-          <h3 class="title-card"><%= flat.name %></h3>
-            <div class="flat-tags">
-              <ul>
-                <% flat.tag_list.each do |tag| %>
-                  <li><%= tag %></li>
-                <% end %>
-              </ul>
+          <h3><%= flat.name %></h3>
+            <div class="flat-infos">
+              <div class="flat-tags">
+                <ul>
+                  <% flat.tag_list.each do |tag| %>
+                    <li><%= tag %></li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>

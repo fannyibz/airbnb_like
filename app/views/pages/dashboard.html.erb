@@ -1,14 +1,18 @@
 
 <div class="container">
 
-    <div class="cards-container">
+    <div class="card-container">
       <h1>My flats</h1>
 
       <%= render "shared/cards_flat_list", flat: @flats %>
 
+      
+
       <%#= link_to "Modify",  edit_flat_path(flat_to_rent), class: "btn btn-cards"  %>
+    </div>
 
 
+  
     <div class="card-container">
       <h1>My bookings</h1>
         <div class="cards-box">
@@ -16,7 +20,7 @@
             <% flat_booked = booking.flat %>
             <div class="card-flat">
               <%= link_to flat_path(flat_booked) do  %>
-                <%= cl_image_tag flat_booked.photo.key, class:"card-photo"%>
+                <%= cl_image_tag flat_booked.photo.key, :crop=>"fit", class:"card-photo"%>
                 <div class="card-infos">
                   <h3><%= flat_booked.name %></h3>
 
