@@ -1,9 +1,9 @@
 <div class="container">
 
-  <div class="bar-top">
-    <%= link_to "Back to flat list", flats_path, class: "btn btn-back"  %>
-  </div>
+  <h1><%= @flat.name %></h1>
 
+  <%= link_to "Back to flat list", flats_path, class: "btn btn-back"  %>
+  
   <div class="flat-container">
     <%= cl_image_tag @flat.photo.key , height: 300, width: 400, crop: :fill %>
     <h2><%= @flat.name %></h2>
@@ -21,7 +21,16 @@
     </div>
     <div class="btn-box">
       <%#=  link_to "Book this flat 👍", %>
-      <%= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-cards"  %>
+      
+      <% if @flat.user == current_user %>
+        <%= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-cards"  %>
+      <% else %>
+        <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
+          Book now
+        </button>
+        <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
+      <% end %>
+      
       <%= link_to "Delete", flat_path(@flat),
                             class: "service-submit-btn btn btn-delete",
                             method: :delete,
@@ -29,6 +38,6 @@
     </div>
   </div>
 
-  <%= render "shared/booking_form", flat: @flat, booking: @booking %>
+
 
 </div>

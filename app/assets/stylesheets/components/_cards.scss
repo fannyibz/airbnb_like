@@ -29,9 +29,17 @@
   }
 }
 
+  #card-booking {
+    display: flex;
+    .card-infos {
+      background-color: violet;
+    }
+  }
+
 .card-infos {
   background-color: #8ca0ff;
   padding: 10px 15px;
+  min-height: 140px;
 }
 
 .flat-tags {

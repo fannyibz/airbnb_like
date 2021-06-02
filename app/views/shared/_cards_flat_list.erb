@@ -3,7 +3,7 @@
   <% @flats.each do |flat| %>
     <div class="card-flat">
       <%= link_to flat_path(flat) do %>
-        <%= cl_image_tag flat.photo.key, :crop=>"fill", :width=>300, :height=>200, class:"card-photo"%>
+        <%= cl_image_tag flat.photo.key, :crop=>"fill", :width=>300, :height=>150, class:"card-photo"%>
         <div class="card-infos">
           <h3><%= flat.name %></h3>
           <div class="flat-infos">
