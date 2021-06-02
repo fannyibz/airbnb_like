@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
 
     def show
+      @night_number = @booking.end_date - @booking.start_date
     end
   
   
@@ -12,6 +13,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       flat = Flat.find(params[:flat_id])
       @booking.flat = flat
+      authorize @booking
       if @booking.save
         redirect_to booking_path(@booking)
       else

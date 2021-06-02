@@ -1,0 +1,19 @@
+<div class="container">
+
+  <%= link_to "Back to dashboard", dashboard_path, class: "btn btn-back"  %>
+
+  <h1>Booking</h1>
+
+  <div class="flat-container">
+    <h2><%= @booking.flat.name %></h1>
+     <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+    <p>📆 : Booking start on <%= @booking.start_date %></p>
+    <p>📅 : Booking end on<%= @booking.end_date %></p>
+    <p>🌙 : <%= @night_number.to_i %> nights</p>
+    <p>For <%= @booking.guest_count %> persons</p>
+    <p>----------------------</p>
+    <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
+    <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
+  </div>
+
+</div>
