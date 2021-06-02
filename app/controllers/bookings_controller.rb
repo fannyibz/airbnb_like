@@ -29,10 +29,10 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
     end
   
-    # def destroy
-    #   @flat.destroy
-    #   redirect_to flats_path
-    # end
+    def destroy
+      @booking.destroy
+      redirect_to dashboard_path
+    end
   
     private
   
