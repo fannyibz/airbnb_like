@@ -21,13 +21,13 @@ class BookingsController < ApplicationController
       end
     end
   
-    # def edit
-    # end
+    def edit
+    end
   
-    # def update
-    #   @flat.update(flat_params)
-    #   redirect_to flat_path(@flat)
-    # end
+    def update
+      @booking.update(booking_params)
+      redirect_to booking_path(@booking)
+    end
   
     # def destroy
     #   @flat.destroy
