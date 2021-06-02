@@ -1,0 +1,34 @@
+<div class="container">
+
+  <%= link_to "Back to dashboard", dashboard_path, class: "btn btn-back"  %>
+
+  <h1>Booking</h1>
+
+  <div class="flat-container">
+    <h2><%= @booking.flat.name %></h1>
+     <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+    <p>📆 : Booking start on <%= @booking.start_date %></p>
+    <p>📅 : Booking end on<%= @booking.end_date %></p>
+    <p>🌙 : <%= @night_number.to_i %> nights</p>
+    <p>For <%= @booking.guest_count %> persons</p>
+    <p>----------------------</p>
+    <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
+    <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
+
+  <!-- #update booking -->
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
+    Modify booking
+  </button>
+  <!-- Modal -->
+  <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
+
+  <!-- #destroy booking -->
+  <%= link_to "Cancel booking", booking_path(@booking),
+                            class: "service-submit-btn btn btn-delete",
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+  </div>
+
+</div>
