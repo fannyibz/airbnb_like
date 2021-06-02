@@ -4,28 +4,40 @@
     <%= link_to "Back to flat list", flats_path, class: "btn btn-back"  %>
   </div>
 
-    <div class="flat-container">
-      <%= cl_image_tag @flat.photo.key , height: 300, width: 400, crop: :fill %>
-      <h2><%= @flat.name %></h2>
-      <p><%= @flat.description %></p>
-      <div class="flat-infos">
-        <p><%= @flat.address %></p>
-        <p><%= @flat.price_per_night %> €</p>
-      </div>
-      <div class="flat-tags">
-        <ul>
-          <% @flat.tag_list.each do |tag| %>
-            <li><%= tag %> </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="btn-box">
-        <%#=  link_to "Book this flat 👍", %>
-        <%= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-cards"  %>
-        <%= link_to "Delete", flat_path(@flat),
-                              class: "service-submit-btn btn btn-delete",
-                              method: :delete,
-                              data: { confirm: "Are you sure?" } %>
-      </div>
+  <div class="flat-container">
+    <%= cl_image_tag @flat.photo.key , height: 300, width: 400, crop: :fill %>
+    <h2><%= @flat.name %></h2>
+    <p><%= @flat.description %></p>
+    <div class="flat-infos">
+      <p><%= @flat.address %></p>
+      <p><%= @flat.price_per_night %> €</p>
+    </div>
+    <div class="flat-tags">
+      <ul>
+        <% @flat.tag_list.each do |tag| %>
+          <li><%= tag %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="btn-box">
+      <%#=  link_to "Book this flat 👍", %>
+      <%= link_to "Modify",  edit_flat_path(@flat), class: "btn btn-cards"  %>
+      <%= link_to "Delete", flat_path(@flat),
+                            class: "service-submit-btn btn btn-delete",
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+    </div>
   </div>
+
+  <div class="booking-container">
+    <div class="flat-form">
+      <%= simple_form_for [@flat, @booking] do |f| %>
+        <%= f.input :start_date, label: "Start" %>
+        <%= f.input :end_date, label: "End" %>
+        <%= f.input :guest_count, label: "Number of persons:" %>
+        <%= f.submit "Save my booking", class: "btn btn-confirm" %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
