@@ -1,0 +1,17 @@
+<h1>User#booking_confirmation_tenant</h1>
+
+<h2>Hi <%= @booking.user.user_contact.first_name %> <%= @booking.user.user_contact.last_name %></h2>
+
+<p>Booking confirmation:</p>
+
+<br>
+<p>📆 Sart date: <%= @booking.start_date %></p>
+<p>📅 End date: <%= @booking.end_date %></p>
+<% night_number = @booking.end_date - @booking.start_date %>
+<br>
+<p>🌙 For <%= @booking.guest_count %> persons</p>
+
+<p>------------------------</p>
+<p>TOTAL: <%= @booking.flat.price_per_night * night_number.to_i %> €</p>
+<br>
+Thanks for joining our service! Please check back often.

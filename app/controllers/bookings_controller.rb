@@ -15,6 +15,8 @@ class BookingsController < ApplicationController
       @booking.flat = flat
       authorize @booking
       if @booking.save
+        mail = UserMailer.booking_confirmation_tenant(@booking)
+        mail.deliver_now
         redirect_to booking_path(@booking)
       else
         redirect_to flat_path(@booking)
