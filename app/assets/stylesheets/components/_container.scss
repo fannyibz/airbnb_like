@@ -3,6 +3,9 @@
   margin-top: 70px;
   width: 85%;
   padding: 10px;
+  #home {
+    display: flex;
+  }
 }
 
 .flat-container {
@@ -11,4 +14,14 @@
   padding: 20px 30px;
   box-shadow: 1px 1px 2px #5d6488;
   border-radius: 5px;
+}
+
+.sub-container {
+  margin-top: 30px;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 2px #5d6488;
+  border-radius: 5px;
+  max-width: 400px;
+  min-height: 280px;
+  position: relative;
 }
