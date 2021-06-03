@@ -1,9 +1,24 @@
 
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <div class="title-box">
+    <h1 id="h1-home">Sharing flats</h1>
+    <h3>Enjoy sharing places</h3>
+  </div>
 
-  <%= link_to "Locate your flat", new_flat_path, class:"btn btn-primary"  %>
+  <div class="home-container">
+    <div class="sub-container" id="home-book">
+      <h2>Find a flat</h3>
+      <p>Book a place like home for your holidays or business travels...</p>
+      <%= link_to "Book a place now!", flats_path, class:"btn btn-cards"  %>
+    </div>
+
+    <div class="sub-container" id= "home-rent">
+      <h2>Share your flat</h2>
+      <p>Rent your flat while your not there and earn money!</p>
+      <%= link_to "Share & earn money", new_flat_path, class:"btn btn-cards"  %>
+    </div>
+  </div>
+
 
 </div>
 

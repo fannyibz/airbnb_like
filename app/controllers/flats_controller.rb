@@ -5,8 +5,8 @@ class FlatsController < ApplicationController
 
 
   def index
-    @flats = policy_scope(Flat)
-
+    all_flats = policy_scope(Flat)
+    @flats = all_flats.reject { |flat| flat.user == current_user } 
     # @flats = Flat.tagged_with("soleil", :on => :tags)
     # @flats = Flat.tagged_with(params[:tag])
 
