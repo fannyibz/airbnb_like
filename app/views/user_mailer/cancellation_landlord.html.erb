@@ -1,0 +1,10 @@
+<h1>🙅‍♀️ Rental cancellation 🙅‍♂️</h1>
+
+<h2>Hi <%= @booking.flat.user.user_contact.first_name.capitalize %> <%= @booking.flat.user.user_contact.last_name.capitalize %></h2>
+
+<p>The booking your flat for <%= @booking.flat.name %> has been cancelled.</p>
+<%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+<br>
+
+<br>
+Thanks for joining our service! Please check back often.
