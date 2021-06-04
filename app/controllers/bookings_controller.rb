@@ -15,8 +15,8 @@ class BookingsController < ApplicationController
       @booking.flat = flat
       authorize @booking
       if @booking.save
-        mail = UserMailer.booking_confirmation_tenant(@booking)
-        mail.deliver_now
+        UserMailer.booking_confirmation_tenant(@booking).deliver_now
+        UserMailer.booking_confirmation_landlord(@booking).deliver_now
         redirect_to booking_path(@booking)
       else
         redirect_to flat_path(@booking)
@@ -33,6 +33,8 @@ class BookingsController < ApplicationController
   
     def destroy
       @booking.destroy
+      UserMailer.cancellation_tenant(@booking).deliver_now
+      UserMailer.cancellation_landlord(@booking).deliver_now
       redirect_to dashboard_path
     end
   

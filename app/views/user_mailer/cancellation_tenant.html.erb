@@ -1,0 +1,14 @@
+<h1>🙅‍♀️ Booking cancellation 🙅‍♂️</h1>
+
+<h2>Hi <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %></h2>
+
+<p>Your booking for <%= @booking.flat.name %> has been validated.</p>
+<br>
+<%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+<br>
+<% night_number = @booking.end_date - @booking.start_date %>
+
+<p>You will be reimbursed <%= @booking.flat.price_per_night * night_number.to_i %> €</p>
+<br>
+<br>
+Thanks for joining our service! Please check back often.

@@ -1,8 +1,10 @@
-<h1>User#booking_confirmation_tenant</h1>
+<h1>👍 Booking confirmation 👍</h1>
 
-<h2>Hi <%= @booking.user.user_contact.first_name %> <%= @booking.user.user_contact.last_name %></h2>
+<h2>Hi <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %></h2>
 
-<p>Booking confirmation:</p>
+<p>Booking confirmation for <%= @booking.flat.name %>:</p>
+
+<%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
 
 <br>
 <p>📆 Sart date: <%= @booking.start_date %></p>
