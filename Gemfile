@@ -48,6 +48,9 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 
+# AASM - State machine
+gem 'aasm'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

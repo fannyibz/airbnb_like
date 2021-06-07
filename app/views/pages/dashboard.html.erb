@@ -12,6 +12,7 @@
       <h1>My bookings</h1>
         <div class="cards-box">
           <% @bookings.each do |booking| %>
+          <% puts booking  %>
             <% flat_booked = booking.flat %>
             <div class="card-flat">
               <%= link_to booking_path(booking) do  %>
