@@ -5,7 +5,7 @@ module Bookable
     include AASM
 
     aasm :reserving, column: "reservation_state" do
-      state :waiting_confirmation, initial: true, before_enter: :mail_confirmation
+      state :waiting_confirmation, initial: true
       state :confirmed, :canceled
 
       event :landlord_confirme do
@@ -21,18 +21,9 @@ module Bookable
       end
     end
 
-
-    def mail_confirmation
-      UserMailer.booking_confirmation_tenant(self).deliver_now
-      UserMailer.booking_confirmation_landlord(self).deliver_now
-    end
-
     def mail_cancellation
       UserMailer.cancellation_tenant(self).deliver_now
       UserMailer.cancellation_landlord(self).deliver_now
     end
-
   end
-
-
 end

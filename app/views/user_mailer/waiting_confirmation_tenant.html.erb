@@ -1,0 +1,18 @@
+<h1> Reservation taken into account </h1>
+
+<h2>Hi <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %></h2>
+
+<p>Your reservation for <%= @booking.flat.name %>, has been taken into account.</p>
+<h3>We will avise you, as soon as your landlord confirme the booking. 😊</h3>
+
+<%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+
+<br>
+<p>📆 From: <%= @booking.start_date %> to <%= @booking.end_date %></p>
+<br>
+<p>🌙 For <%= @booking.guest_count %> persons</p>
+
+<br>
+<br>
+<br>
+Thanks for joining our service! Please check back often.

@@ -1,0 +1,18 @@
+<h1> Your flat has been reserved </h1>
+
+<h2>Hi <%= @booking.flat.user.user_contact.first_name.capitalize %> <%= @booking.flat.user.user_contact.last_name.capitalize %></h2>
+
+<p>Your flat <%= @booking.flat.name %>, has been reserved.</p>
+<br>
+<p>📆 From <%= @booking.start_date %> to <%= @booking.end_date %></p>
+<p>👤 For <%= @booking.guest_count %> persons</p>
+<%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+<br>
+<h3>Go to our website to confirme the booking. 👍</h3>
+<%= link_to "Confirme booking", booking_url(@booking), class: "btn btn-cards"  %>
+<br>
+<br>
+<br>
+<br>
+<br>
+Thanks for joining our service! Please check back often.
