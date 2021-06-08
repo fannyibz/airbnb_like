@@ -14,21 +14,51 @@
     <p>----------------------</p>
     <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
     <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
-
-  <!-- #update booking -->
   
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
-    Modify booking
-  </button>
-  <!-- Modal -->
-  <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
+    <% if current_user == @booking.flat.user %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+        Confirmation
+      </button>
 
-  <!-- #destroy booking -->
-  <%= link_to "Cancel booking", booking_path(@booking),
-                            class: "service-submit-btn btn btn-delete",
-                            method: :delete,
-                            data: { confirm: "Are you sure?" } %>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="staticBackdropLabel">Rental to confirme</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Do tou want to confirme this booking?
+            </div>
+            <div class="modal-footer">
+              <%= link_to "No", booking_path(@booking),
+                                class: "service-submit-btn btn btn-delete",
+                                method: :delete
+                                data: { confirm: "Are you sure?" } %>
+              <button type="button" class="btn btn-cards">Confirme</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <!-- #update booking -->
+      <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
+        Modify booking
+      </button>
+      <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
+
+      <!-- #destroy booking -->
+      <%= link_to "Cancel booking", booking_path(@booking),
+                                class: "service-submit-btn btn btn-delete",
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+      
+    <% end %>
+  
   </div>
 
 </div>

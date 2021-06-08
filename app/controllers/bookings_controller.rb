@@ -35,6 +35,13 @@ class BookingsController < ApplicationController
       UserMailer.cancellation_landlord(@booking).deliver_now
       redirect_to dashboard_path
     end
+
+    # TODO:
+    ## - créer une route dédiée à la confirmation
+    ## - créer une méthode assignée à la route
+    ## - faire raise quand jappuie sur le bouton de la vue
+    ##    1. identifier booking
+    ##    2. passer le booking en confirme
   
     private
   
