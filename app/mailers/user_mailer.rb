@@ -15,6 +15,12 @@ class UserMailer < ApplicationMailer
     mail(to: @booking.flat.user.email, subject: 'Reservation to confirmed')
   end
 
+  def unconfirmation_tenant(booking)
+    @booking = booking
+    mail(to: @booking.user.email, subject: 'Booking unconfirmed by landlord')
+  end
+
+
   def booking_confirmation_tenant(booking)
     @booking = booking
     mail(to: @booking.user.email, subject: 'Booking confirmation')

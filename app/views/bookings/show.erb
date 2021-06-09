@@ -5,30 +5,68 @@
   <h1>Booking</h1>
 
   <div class="flat-container">
-    <h2><%= @booking.flat.name %></h1>
-     <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
-    <p>📆 : Booking start on <%= @booking.start_date %></p>
-    <p>📅 : Booking end on<%= @booking.end_date %></p>
-    <p>🌙 : <%= @night_number.to_i %> nights</p>
-    <p>For <%= @booking.guest_count %> persons</p>
-    <p>----------------------</p>
-    <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
-    <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
+    <div class="flat-infos">
+      <h2><%= @booking.flat.name %></h1>
+      <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
+      <p>📆 : Booking start on <%= @booking.start_date %></p>
+      <p>📅 : Booking end on<%= @booking.end_date %></p>
+      <p>🌙 : <%= @night_number.to_i %> nights</p>
+      <p>For <%= @booking.guest_count %> persons</p>
+      <p>----------------------</p>
+      <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
+      <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
+    
+      <% if current_user == @booking.flat.user %>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#staticBackdrop">
+          Confirmation
+        </button>
 
-  <!-- #update booking -->
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
-    Modify booking
-  </button>
-  <!-- Modal -->
-  <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="staticBackdropLabel">Rental to confirm</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Do you want to confirme this booking?
+              </div>
+              <div class="modal-footer">
+                <%= link_to "No", booking_unconfirm_path(@booking),
+                                  class: "btn btn-delete", 
+                                  method: :patch %>
+                                  
+                <%= link_to "Yes", booking_confirm_path(@booking),
+                                  class: "btn btn-cards", 
+                                  method: :patch %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <!-- #update booking -->
+        <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
+          Modify booking
+        </button>
+        <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
 
-  <!-- #destroy booking -->
-  <%= link_to "Cancel booking", booking_path(@booking),
-                            class: "service-submit-btn btn btn-delete",
-                            method: :delete,
-                            data: { confirm: "Are you sure?" } %>
+        <!-- #destroy booking -->
+        <%= link_to "Cancel booking", booking_path(@booking),
+                                  class: "service-submit-btn btn btn-delete",
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+        
+      <% end %>
+    
+    </div>
+
+    <div class="booking-state">
+      <h4>Booking state: <%= @booking.reservation_state %></h4>
+    </div>
+
   </div>
-
 </div>

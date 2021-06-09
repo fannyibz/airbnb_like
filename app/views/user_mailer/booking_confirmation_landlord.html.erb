@@ -16,7 +16,9 @@
 <p>💰 For <%= total = @booking.flat.price_per_night * night_number.to_i %> €</p>
 
 <p>------------------------</p>
+<p>You will win <%= total * 0.70 %> €</p>
 
-<p>You will win <%= total * 0.70 %></p>
+
+<h3>We will avise you as soon as the tenant, <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %>, has paid.</h3>
 <br>
 Thanks for joining our service! Please check back often.
