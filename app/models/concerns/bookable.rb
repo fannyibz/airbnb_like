@@ -8,11 +8,11 @@ module Bookable
       state :waiting_confirmation, initial: true
       state :confirmed, :canceled
 
-      event :landlord_confirme do
+      event :landlord_confirm, after: :mail_confirmation do
         transitions from: :waiting_confirmation, to: :confirmed 
       end
 
-      event :unconfirme, before: :mail_unconfirmation do
+      event :unconfirm, before: :mail_unconfirmation do
         transitions from: :waiting_confirmation, to: :canceled
       end
 
@@ -23,7 +23,16 @@ module Bookable
       event :waiting do
         transitions from: [ :canceled, :confirmed ], to: :waiting_confirmation
       end
+    end
 
+    
+    def mail_confirmation
+      UserMailer.booking_confirmation_tenant(self).deliver_now
+      UserMailer.booking_confirmation_landlord(self).deliver_now
+    end
+    
+    def mail_unconfirmation
+      UserMailer.unconfirmation_tenant(self).deliver_now
     end
 
     def mail_cancellation
@@ -31,9 +40,6 @@ module Bookable
       UserMailer.cancellation_landlord(self).deliver_now
     end
 
-    def mail_unconfirmation
-      UserMailer.unconfirmation_tenant(self).deliver_now
-    end
   end
 end
 

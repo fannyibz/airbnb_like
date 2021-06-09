@@ -2,7 +2,7 @@
 
 <h2>Hi <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %></h2>
 
-<p>Your booking for <%= @booking.flat.name %> has not been validated by the landlord.</p>
+<p>Your booking for <%= @booking.flat.name %> has not been validated by the landlord, <%= @booking.flat.user.user_contact.first_name.capitalize %> <%= @booking.flat.user.user_contact.last_name.capitalize %>.</p>
 <br>
 <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
 <br>

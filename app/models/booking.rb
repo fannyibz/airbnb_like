@@ -1,14 +1,12 @@
 class Booking < ApplicationRecord
-  #
+
   # Relations
-  #
   belongs_to :flat
   belongs_to :user
   
   include Bookable
-  #
+
   # Callbacks
-  #
   after_create :waiting_confirmation_mails
 
   private

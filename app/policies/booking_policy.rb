@@ -25,7 +25,11 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def cancel?
+  def confirm?
+    record.flat.user == user
+  end
+
+  def unconfirm?
     record.flat.user == user
   end
 

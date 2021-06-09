@@ -2,7 +2,7 @@
 
 <h2>Hi <%= @booking.user.user_contact.first_name.capitalize %> <%= @booking.user.user_contact.last_name.capitalize %></h2>
 
-<p>Booking confirmation for <%= @booking.flat.name %>:</p>
+<p>Your booking for <%= @booking.flat.name %> has been confirmed by the landlord <%= @booking.flat.user.user_contact.first_name.capitalize %> <%= @booking.flat.user.user_contact.last_name.capitalize %>:</p>
 
 <%= cl_image_tag @booking.flat.photo.key , height: 300, width: 400, crop: :fill %>
 
@@ -15,5 +15,11 @@
 
 <p>------------------------</p>
 <p>TOTAL: <%= @booking.flat.price_per_night * night_number.to_i %> €</p>
+<br>
+
+<h3>To finish your booking you can proceed to the payment on our website.</h3>
+
+<%= link_to "Pay now", booking_url(@booking), class:"btn btn-cards" %>
+
 <br>
 Thanks for joining our service! Please check back often.

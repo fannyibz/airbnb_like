@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   # acts_as_token_authentication_handler_for User, except: [:index, :show]
-  before_action :find_booking, only: [:show, :cancel, :edit, :update, :destroy]
+  before_action :find_booking, only: [:show, :edit, :update, :destroy, :confirm, :unconfirm]
 
 
   def show
@@ -41,18 +41,16 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  # TODO:
-  ## - créer une route dédiée à la confirmation
-  ## - créer une méthode assignée à la route
-  ## - faire raise quand jappuie sur le bouton de la vue
-  ##    1. identifier booking
-  ##    2. passer le booking en confirme
-
-  def cancel
+  def confirm
     authorize @booking
-    raise
-    @booking.unconfirme!
-    # raise
+    @booking.landlord_confirm!
+    redirect_to dashboard_path
+  end
+
+  def unconfirm
+    authorize @booking
+    @booking.unconfirm!
+    redirect_to dashboard_path
   end
 
   private
