@@ -35,10 +35,9 @@
               Do tou want to confirme this booking?
             </div>
             <div class="modal-footer">
-              <%= link_to "No", booking_path(@booking),
+              <%= link_to "No", cancel_booking_path(@booking),
                                 class: "service-submit-btn btn btn-delete",
-                                method: :delete
-                                data: { confirm: "Are you sure?" } %>
+                                method: :cancel%>
               <button type="button" class="btn btn-cards">Confirme</button>
             </div>
           </div>

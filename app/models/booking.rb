@@ -1,11 +1,11 @@
 class Booking < ApplicationRecord
-  include Bookable
   #
   # Relations
   #
   belongs_to :flat
   belongs_to :user
-
+  
+  include Bookable
   #
   # Callbacks
   #

@@ -12,18 +12,29 @@ module Bookable
         transitions from: :waiting_confirmation, to: :confirmed 
       end
 
-      event :unconfirme do
+      event :unconfirme, before: :mail_unconfirmation do
         transitions from: :waiting_confirmation, to: :canceled
       end
 
-      event :cancel, after: :mail_cancellation, before_exit: :mail_cancellation do
+      event :cancel, after: :mail_cancellation do
         transitions from: :confirmed, to: :canceled
       end
+
+      event :waiting do
+        transitions from: [ :canceled, :confirmed ], to: :waiting_confirmation
+      end
+
     end
 
     def mail_cancellation
       UserMailer.cancellation_tenant(self).deliver_now
       UserMailer.cancellation_landlord(self).deliver_now
     end
+
+    def mail_unconfirmation
+      UserMailer.unconfirmation_tenant(self).deliver_now
+    end
   end
 end
+
+# :mail_cancellation, before_exit: :mail_cancellation
