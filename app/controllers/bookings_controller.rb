@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   # acts_as_token_authentication_handler_for User, except: [:index, :show]
-  before_action :find_booking, only: [:show, :edit, :update, :destroy, :confirm, :unconfirm]
+  before_action :find_booking, only: [:show, :edit, :update, :destroy]
 
 
   def show
@@ -42,12 +42,14 @@ class BookingsController < ApplicationController
   end
 
   def confirm
+    @booking = Booking.find(params[:booking_id])
     authorize @booking
     @booking.landlord_confirm!
     redirect_to dashboard_path
   end
 
   def unconfirm
+    @booking = Booking.find(params[:booking_id])
     authorize @booking
     @booking.unconfirm!
     redirect_to dashboard_path

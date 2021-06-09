@@ -8,7 +8,7 @@ module Bookable
       state :waiting_confirmation, initial: true
       state :confirmed, :canceled
 
-      event :landlord_confirm, after: :mail_confirmation do
+      event :landlord_confirm, before: :mail_confirmation do
         transitions from: :waiting_confirmation, to: :confirmed 
       end
 
