@@ -6,15 +6,15 @@
       <h3><%= flat_booked.name %></h3>
 
       <div class="box-infos">
-        <div class="box-details">
-          <% days = booking.end_date - booking.start_date %>
-          <p> 📆 : <%= days.to_i %> nuits </p>
-          <p>👤 : <%= booking.guest_count %> personnes</p>
-          <% total = flat_booked.price_per_night * days.to_i %>
-          <p>💰 : <%= total %> €</p>
-        </div>
         <div class="label-card">
           <%= booking.reservation_state%>
+        </div>
+        <div class="box-details">
+          <% days = booking.end_date - booking.start_date %>
+          <p> 📆  <%= days.to_i %> nuits </p>
+          <p>👤  <%= booking.guest_count %> personnes</p>
+          <% total = flat_booked.price_per_night * days.to_i %>
+          <p>💰 <%= total %> €</p>
         </div>
       </div>
     <% end %>
