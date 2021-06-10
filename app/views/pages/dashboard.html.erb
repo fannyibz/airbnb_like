@@ -10,11 +10,21 @@
   
     <div class="card-container">
       <h1>My bookings</h1>
+      <div class="cards-box">
+        <% @bookings.each do |booking| %>
+          <%= render "shared/cards_booking_list", booking: booking %>
+        <% end %>
+      </div>
+      
+      <% if Booking.canceled.where(user: current_user).nil? %>
+        <h2>Canceled or past bookings</h2>
         <div class="cards-box">
           <% @bookings.each do |booking| %>
-            <%= render "shared/cards_booking_list", booking: booking %>
+            <%= render "shared/cards_booking_list", booking: Booking.canceled.where(user: booking.user) %>
           <% end %>
         </div>
+      <% end %>
+      
     </div>
     <%#= render "form", flat: @flat %>
 </div>
