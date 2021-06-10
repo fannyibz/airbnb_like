@@ -55,6 +55,13 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def cancel
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
+    @booking.cancel!
+    redirect_to dashboard_path
+  end
+
   private
 
   def find_booking

@@ -16,7 +16,7 @@
       <p>Price per night : <%= @booking.flat.price_per_night %> €</p>
       <p>Total : <%= @night_number.to_i * @booking.flat.price_per_night %> €</p>
     
-      <% if current_user == @booking.flat.user %>
+      <% if current_user == @booking.flat.user && @booking.reservation_state == "waiting_confirmation"%>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#staticBackdrop">
           Confirmation
@@ -47,6 +47,14 @@
             </div>
           </div>
         </div>
+      <% elsif current_user == @booking.flat.user %>
+        <%= link_to "Cancel booking", booking_cancel_path(@booking),
+                                  class: "service-submit-btn btn btn-delete",
+                                  method: :patch,
+                                  data: { confirm: "Are you sure?" } %>
+      <% elsif current_user == @booking.user && @booking.reservation_state == "confirmed" %>
+        <%= link_to "💳 Pay now 💳", "#",
+                              class: "service-submit-btn btn btn-cards" %>
       <% else %>
         <!-- #update booking -->
         <button type="button" class="btn btn-cards" data-toggle="modal" data-target="#updateModal">
@@ -55,9 +63,9 @@
         <%= render "shared/booking_modal", flat: @flat, booking: @booking %>
 
         <!-- #destroy booking -->
-        <%= link_to "Cancel booking", booking_path(@booking),
+        <%= link_to "Cancel booking", booking_cancel_path(@booking),
                                   class: "service-submit-btn btn btn-delete",
-                                  method: :delete,
+                                  method: :patch,
                                   data: { confirm: "Are you sure?" } %>
         
       <% end %>
