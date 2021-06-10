@@ -33,4 +33,8 @@ class BookingPolicy < ApplicationPolicy
     record.flat.user == user
   end
 
+  def cancel?
+    record.flat.user == user || record.user == user
+  end
+
 end
