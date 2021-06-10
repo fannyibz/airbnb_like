@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :show, :edit, :update, :destroy ] do
     patch "unconfirm"
     patch "confirm"
+    patch "cancel"
   end
 
    namespace :api, defaults: { format: :json } do
