@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+      
+    @test_var = '<h1>Hello Var</h1>'
     @user_infos = current_user.user_contact
     @flats = current_user.flats
     @bookings = current_user.bookings

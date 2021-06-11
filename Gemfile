@@ -51,6 +51,9 @@ gem 'faker'
 # AASM - State machine
 gem 'aasm'
 
+# Traductions / Ruby internationalization and localization (i18n) solution.
+# gem 'i18n'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
