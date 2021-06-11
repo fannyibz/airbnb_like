@@ -10,28 +10,23 @@
   
     <div class="card-container">
       <h1>My bookings</h1>
-        <div class="cards-box">
-          <% @bookings.each do |booking| %>
-          <% puts booking  %>
-            <% flat_booked = booking.flat %>
-            <div class="card-flat">
-              <%= link_to booking_path(booking) do  %>
-                <%= cl_image_tag flat_booked.photo.key, :crop=>"fill", :width=>300, :height=>150, class:"card-photo"%>
-                <div class="card-infos">
-                  <h3><%= flat_booked.name %></h3>
+      <div class="cards-box">
+        <% @bookings.each do |booking| %>
+          <%= render "shared/cards_booking_list", booking: booking %>
+        <% end %>
+      </div>
+      
+      <% canceled_booking = Booking.canceled.where(user: current_user)%>
 
-                  <div class="flat-infos">
-                    <p>👤 : <%= booking.guest_count %> personnes</p>
-                    <% days = booking.end_date - booking.start_date %>
-                    <p> 📆 : <%= days.to_i %> nuits </p>
-                    <% total = flat_booked.price_per_night * days.to_i %>
-                    <p>💰 : <%= total %> €</p>
-                  </div>
-                <% end %>
-                </div>
-            </div>
+      <% unless canceled_booking.nil? %>
+        <h2>Canceled or past bookings</h2>
+        <div class="cards-box">
+          <% canceled_booking.each do |booking| %>
+            <%= render "shared/cards_booking_list", booking: booking %>
           <% end %>
         </div>
+      <% end %>
+      
     </div>
     <%#= render "form", flat: @flat %>
 </div>
