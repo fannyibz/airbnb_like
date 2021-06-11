@@ -16,11 +16,13 @@
         <% end %>
       </div>
       
-      <% if Booking.canceled.where(user: current_user).nil? %>
+      <% canceled_booking = Booking.canceled.where(user: current_user)%>
+
+      <% unless canceled_booking.nil? %>
         <h2>Canceled or past bookings</h2>
         <div class="cards-box">
-          <% @bookings.each do |booking| %>
-            <%= render "shared/cards_booking_list", booking: Booking.canceled.where(user: booking.user) %>
+          <% canceled_booking.each do |booking| %>
+            <%= render "shared/cards_booking_list", booking: booking %>
           <% end %>
         </div>
       <% end %>
