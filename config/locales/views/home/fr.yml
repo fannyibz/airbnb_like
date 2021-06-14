@@ -1,0 +1,18 @@
+fr:
+  views:
+    home:
+      hello: "Bonjour le monde"
+      title_app: "Partager un appartement"
+      sub_title_app: "Partagez vos lieux de vie"
+      title_action_find: "Trouver un appartement"
+      sub_title_action_find: "Reserve un lieu qui te ressemble pour tes vacances ou voyages d'affaires..."
+      btn_action_find: "Réserve dès maintenant!"
+      title_action_share: "Propose ta maison"
+      sub_title_action_share: "Loue ta maison quand tu n'y est pas et gagne de l'argent!"
+      btn_action_share: "Loue ta maison"
+  models:
+    booking:
+      reservation_state:
+        confirmed: 'Confirmé'
+        waiting_confirmation: 'En attende de confirmation du patron'
+        canceled: 'Annulé, déso'
