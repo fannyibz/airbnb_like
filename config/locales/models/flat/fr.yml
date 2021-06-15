@@ -1,0 +1,11 @@
+fr:
+  activerecord:
+    models:
+      flat:
+    attributes:
+      flat:
+        name: "Nom de l'appartement"
+        description: "Description"
+        address: "Adresse"
+        price_per_night: "Prix pour une nuit"
+        tag_list: "Catégories"

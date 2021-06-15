@@ -1,0 +1,6 @@
+fr:
+  views:
+    forms:
+      flat_form:
+        tag_list_hint: "Ajouter une virgule entre chaque catégorie"
+        btn_submit: "Enregitrer"

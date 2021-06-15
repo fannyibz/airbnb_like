@@ -1,0 +1,6 @@
+en:
+  views:
+    forms:
+      flat_form:
+        tag_list_hint: "Add your tags, separated by commas"
+        btn_submit: "Save my flat"

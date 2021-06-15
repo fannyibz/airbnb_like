@@ -1,13 +1,13 @@
 
 <div class="flat-form">
     <%= simple_form_for flat do |f| %>
-      <%= f.input :name, label: "Flat name:" %>
+      <%= f.input :name %>
       <%= f.input :photo, as: :file %>
-      <%= f.input :description, label: "Description of the place:" %>
-      <%= f.input :address, label: "Address:" %>
-      <%= f.input :price_per_night, label: "Price per nigth:" %>
-      <%= f.input :tag_list, label: "Category:", hint: "Add your tags, separated by commas" %>
-      <%= f.submit "Save my flat", class: "btn btn-confirm" %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price_per_night %>
+      <%= f.input :tag_list, hint: I18n.t("views.forms.flat_form.tag_list_hint") %>
+      <%= f.submit I18n.t("views.forms.flat_form.btn_submit"), class: "btn btn-confirm" %>
     <% end %>
 </div>
 

@@ -1,24 +1,30 @@
 
 <div class="container">
   <div class="title-box">
-    <h1 id="h1-home">Sharing flats</h1>
-    <h3>Enjoy sharing places</h3>
+    <h1 id="h1-home"><%= I18n.t("views.home.title_app") %></h1>
+    <h3><%= I18n.t("views.home.sub_title_app") %></h3>
   </div>
 
   <div class="home-container">
     <div class="sub-container" id="home-book">
-      <h2>Find a flat</h3>
-      <p>Book a place like home for your holidays or business travels...</p>
-      <%= link_to "Book a place now!", flats_path, class:"btn btn-cards"  %>
+      <h2><%= I18n.t("views.home.title_action_find") %></h2>
+      <p><%= I18n.t("views.home.sub_title_action_find") %></p>
+      <%= link_to I18n.t("views.home.btn_action_find"), flats_path, class:"btn btn-cards"  %>
     </div>
 
     <div class="sub-container" id= "home-rent">
-      <h2>Share your flat</h2>
-      <p>Rent your flat while your not there and earn money!</p>
-      <%= link_to "Share & earn money", new_flat_path, class:"btn btn-cards"  %>
+      <h2><%= I18n.t("views.home.title_action_share") %></h2>
+      <p><%= I18n.t("views.home.sub_title_action_share") %></p>
+      <%= link_to I18n.t("views.home.btn_action_share"), new_flat_path, class:"btn btn-cards"  %>
     </div>
   </div>
 
+  <% @booking_by_state.each do |state, bookings| %>
+    <h1><%= I18n.t("activerecord.models.booking.reservation_state.#{state}") %></h1>
+    <% bookings.each do |booking| %>
+        <%= render "shared/cards_booking_list", booking: booking %>
+    <% end %>
+  <% end  %>
 
 </div>
 

@@ -1,9 +1,9 @@
 <div class="booking-container">
     <div class="flat-form">
       <%= simple_form_for [@flat, @booking] do |f| %>
-        <%= f.input :start_date, label: "Start" %>
-        <%= f.input :end_date, label: "End" %>
-        <%= f.input :guest_count, label: "Number of persons:" %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :guest_count %>
         <%= f.submit "Save my booking", class: "btn btn-confirm" %>
       <% end %>
     </div>

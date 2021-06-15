@@ -1,0 +1,7 @@
+en:
+  views:
+    flats:
+      title: "Flats"
+      btn:
+        modify: "Modify"
+        book: "Book"

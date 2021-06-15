@@ -1,0 +1,7 @@
+fr:
+  views:
+    flats:
+      title: "Appartements"
+      btn:
+        modify: "Modifier"
+        book: "Réserver"

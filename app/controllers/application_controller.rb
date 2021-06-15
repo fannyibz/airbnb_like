@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :set_locale
 
   include Pundit
 
@@ -15,6 +16,15 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+  
+  def set_locale
+    I18n.locale = extract_locale || I18n.default_locale
+  end
+
+  def extract_locale
+    locale = params[:locale]
+    I18n.available_locales.map(&:to_s).include?(locale) ? locale : nil
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
