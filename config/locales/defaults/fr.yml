@@ -1,0 +1,110 @@
+fr:
+  time:
+    formats:
+      long: "%d/%m/%Y"
+      short: "%H:%M"
+  date:
+    formats:
+      start_date: Date de début
+      end_date: Date de fin
+      invoice_duration: Période de paie
+      short: "%d/%m/%Y"
+      day_complete: "%A %e %B %Y"
+      period: "%B %Y"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+  default:
+    empty: "Non renseigné(e)"
+    app_name: Prium One
+    status: Statut
+    vat_enum:
+      "20": "Taux normal - 20%"
+      "0": "Taux zéro - 0%"
+    actions: Actions
+    validate: Valider
+    status_enum:
+      in_progress: En attente
+      rejected: Rejeté
+      approved: Approuvé
+      lost: Perdu
+      to_sign: A Signer
+      signed: Signé
+      validated: Validé
+      closed: Clôturé
+      submitted: Soumis
+      archived: Archivé
+      paid: Réglé
+      irrecoverable: Irrecouvrable
+      partially_paid: Partiellement réglé
+      generated: Généré
+      signature_procedure_started: Procédure de signature lancée
+      null: ""
+    save: Enregistrer
+    select: Sélectionner
+    submit: Soumettre
+    confirm: Confirmer
+    send_for_validation: "Soumettre pour validation"
+    export: Exporter
+    audit: Modifié le %{update_date} par %{user}
+    audit_last_update: Dernière modification le %{update_date} à %{update_time} par %{user}
+    close: Fermer
+    button:
+      validate: Valider
+      refuse: Refuser
+      create: Créer
+      display: Afficher
+      download: Télécharger
+      download_signed: Télécharger le document signé
+      refuse: Refuser
+      delete: Supprimer
+      sign_in: Se connecter
+      delete_document: Supprimer le document
+      generate: Générer le document
+      termination: "Mettre Fin au contrat"
+    views:
+      show: Voir
+      edit: Modifier
+      desactivate: Désactiver
+      reactivate: Activer
+      download: Télécharger
+      current_file: Fichier actuel
+      no_current_file: "-"
+    memo: Remarques
+    login:
+      successfull: "Vous êtes bien connecté à l'application Prium One, bienvenue"
+      invalid_login: "Mauvaise combinaison Email / Mot De Passe"
+      invalid_password: "Mot de passe incorrect"
+      role_not_permitted: "Vous ne pouvez pas vous connecter si vous n'êtes ni un employé,
+        ni un administrateur, merci de contacter notre service technique pour plus d'informations."
+      login_not_permitted_anymore: "Vous n'avez plus les droits de vous connecter à l'application,
+        merci de contacter votre référent Prium pour plus d'informations."
+    "yes": Oui
+    "no": Non
+    errors:
+      file_size: "Votre document doit avoir une taille inférieure à 10 Mo."
+      file_size_with_attribute: "%{attribute} doit avoir une taille inférieure à 10 Mo."
+    warnings:
+      input:
+        file: "Attention, ce fichier ne sera pas sauvegardé car il fait plus de 10 Mo."
+    no_element_found: "Aucun élément trouvé"
+    drag_and_drop: "Glisser un fichier"
+    make_a_choice: "Choisir une option"
+    add_file: "Ajouter un fichier"
+    modify: "Modifier"
+    forbidden_update: "Vous n'avez pas les droits nécessaires à cette action"
+    signature_procedure:
+      yousign:
+        name: "Signature électronique"
+        member_prium: "de Prium"
+        member_client: "du client"
+        member_employee: "du salarié porté"
+      manual:
+        name: "Signature manuelle"

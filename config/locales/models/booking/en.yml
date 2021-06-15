@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      booking:
+        reservation_state:
+          confirmed: "Confirmed"
+          waiting_confirmation: "Waiting"
+          canceled: "Canceled"
+    attributes:
+      booking:
+        start_date: "Start date"
+        end_date: "End date"
+        guest_count: "Number of persons"
+        tag_list: "Category"

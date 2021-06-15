@@ -33,6 +33,10 @@ class Booking < ApplicationRecord
   # Callbacks
   after_create :waiting_confirmation_mails
 
+  def human_reservation_state
+    I18n.t("models.booking.reservation_state.#{reservation_state}")
+  end
+
   private
 
   # When a booking is created we send mail to tenant and landlord so they confirm or not the booking
@@ -40,4 +44,5 @@ class Booking < ApplicationRecord
     UserMailer.waiting_confirmation_tenant(self).deliver_now
     UserMailer.waiting_confirmation_landlord(self).deliver_now
   end
+
 end

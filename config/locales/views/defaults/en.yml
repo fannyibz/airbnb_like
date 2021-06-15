@@ -1,0 +1,12 @@
+en:
+  defaults:
+    home:
+      hello: "Hello world"
+      title_app: "Sharing ggg flats"
+      sub_title_app: "Enjoy sharing places"
+      title_action_find: "Find a flat"
+      sub_title_action_find: "Book a place like home for your holidays or business travels..."
+      btn_action_find: "Book a place now!"
+      title_action_share: "Share your flat"
+      sub_title_action_share: "Rent your flat while your not there and earn money!"
+      btn_action_share: "Share & earn money"
