@@ -6,8 +6,8 @@
       <%= f.input :description %>
       <%= f.input :address %>
       <%= f.input :price_per_night %>
-      <%= f.input :tag_list, hint: "Add your tags, separated by commas" %>
-      <%= f.submit "Save my flat", class: "btn btn-confirm" %>
+      <%= f.input :tag_list, hint: I18n.t("views.forms.flat_form.tag_list_hint") %>
+      <%= f.submit I18n.t("views.forms.flat_form.btn_submit"), class: "btn btn-confirm" %>
     <% end %>
 </div>
 

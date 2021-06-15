@@ -18,9 +18,9 @@
         </div>
       <% end %>
       <% if current_user == flat.user %>
-        <%= link_to "Modify",  edit_flat_path(flat), class: "btn btn-cards"  %>
+        <%= link_to I18n.t("views.flats.btn.modify"),  edit_flat_path(flat), class: "btn btn-cards"  %>
       <% else %>
-        <%= link_to "Book", flat_path(flat), class: "btn btn-cards"  %>
+        <%= link_to I18n.t("views.flats.btn.book"), flat_path(flat), class: "btn btn-cards"  %>
       <% end %>
     </div>
     
